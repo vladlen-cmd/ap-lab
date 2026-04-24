@@ -1,6 +1,6 @@
 # Android Application Development Lab (TEE7111)  
 
-1. **[Practical 1](.Practical-1-Development-Setup): Setting Up Android Development Environment**  
+1. **[Practical 1](.ap-lab/Practical-1-Development-Setup): Setting Up Android Development Environment**  
    Aim: To install and configure Android Studio and understand the structure of an Android project.
 
 2. **[Practical 2](.Practical-2-Hello-World): Hello World Application**  
