@@ -1,0 +1,77 @@
+package com.example.practical_3;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class WelcomeActivity extends AppCompatActivity {
+
+    private static final String TAG = "WelcomeActivity";
+
+    private void showLifecycleEvent(String methodName) {
+        Log.d(TAG, methodName);
+        Toast.makeText(this, TAG + " " + methodName, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        showLifecycleEvent("onCreate");
+
+        setContentView(R.layout.activity_welcome);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+        TextView tvWelcome = findViewById(R.id.tvWelcome);
+        String username = getIntent().getStringExtra("username");
+        if (username == null || username.trim().isEmpty()) {
+            username = getString(R.string.default_user);
+        }
+        tvWelcome.setText(getString(R.string.welcome_message, username));
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        showLifecycleEvent("onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        showLifecycleEvent("onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        showLifecycleEvent("onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        showLifecycleEvent("onStop");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        showLifecycleEvent("onRestart");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        showLifecycleEvent("onDestroy");
+    }
+}

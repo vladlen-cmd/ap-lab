@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="bg_start">#0E0A13</color>
+    <color name="bg_end">#17121F</color>
+    <color name="button_fill">#D8C2FF</color>
+    <color name="button_text">#3A2B56</color>
+    <color name="text_primary">#F2F0F6</color>
+    <color name="text_hint">#9D93AA</color>
+    <color name="underline">#C9B8F2</color>
+    <color name="toast_fill">#2A2433</color>
+</resources>
